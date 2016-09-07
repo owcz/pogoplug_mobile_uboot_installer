@@ -42,23 +42,17 @@ Here's what you do:
 
    The Pogoplug will boot its busybox-based Linux install and try to grab a DHCP address.
 
-2. **Figure out what IP address it got** from DHCP.
+2. **Find its IP address.**
 
-   If you run your own DHCP server, check your logs.
+   Your router assigns IP addresses through DHCP. Check your logs, or alternatively, use [`nmap`](https://nmap.org/). For example, if your subnet prefix is `192.168.1`,
    
-   If DHCP is managed by your wifi router, use `nmap`:
+   `nmap -sn 192.168.1.* | grep PogoplugMobile`
    
-   `nmap -sn 192.168.2.*`
-   
-   The Pogoplug will try to inform your DHCP server that its hostname is `PogoplugMobile`, so you should see something like this in the output of `nmap`:
+   The latter part sorts out all responses that do not include `PogoplugMobile`:
    
    ```
-Starting Nmap 6.47 ( http://nmap.org ) at 2015-10-07 21:01 CDT
-...
-Nmap scan report for PogoplugMobile.localnet (192.168.2.204)
-Host is up (0.017s latency).
-...
-```
+Nmap scan report for PogoplugMobile.localnet (192.168.1.204)
+   ```
 
 3. **Start SSH** on the Pogoplug
 
@@ -68,9 +62,9 @@ Host is up (0.017s latency).
    
    `curl -k "https://root:ceadmin@PogoplugMobile/sqdiag/HBPlug?action=command&command=dropbear%20start"`
    
-   Otherwise, you'll have to stick it's IP address in there, e.g.:
+   Otherwise, you'll have to stick its IP address in there, e.g.:
    
-   `curl -k "https://root:ceadmin@192.168.2.204/sqdiag/HBPlug?action=command&command=dropbear%20start"`
+   `curl -k "https://root:ceadmin@192.168.1.204/sqdiag/HBPlug?action=command&command=dropbear%20start"`
    
    The curl command will spit out a bunch of HTML in your terminal.  That means it worked.
    
@@ -80,9 +74,9 @@ Host is up (0.017s latency).
    
    `ssh root@PogoplugMobile`
    
-   Otherwise, use it's IP address, e.g.:
+   Otherwise, use its IP address, e.g.:
 
-   `ssh root@192.168.2.204`
+   `ssh root@192.168.1.204`
    
    The stock root password is `ceadmin`.
    
