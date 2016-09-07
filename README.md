@@ -1,5 +1,5 @@
 # pogoplug_mobile_uboot_installer
-A script which installs uboot onto a **Pogoplug Mobile** or **Pogoplug Series 4** (allowing you to boot Linux from USB or SD card).
+Boot a **Pogoplug Mobile** or **Pogoplug Series 4** into Linux from USB or SD media by installing [uBoot](https://en.wikipedia.org/wiki/Das_U-Boot).
 
 ## TL;DR:
 
@@ -111,12 +111,6 @@ ash uboot.sh
 
 **Note:** If you are running this script on several Pogoplugs and get tired of answering all of the prompts, you can instead tell the script to assume yes to all prompts via `ash uboot.sh -y`.
 
-## Credits
-
-This script is based on the instructions in Qui's blog post: http://blog.qnology.com/2014/07/hacking-pogoplug-v4-series-4-and-mobile.html
-
-Qui's work was in turn based on work from the crew at the doozan forums: http://forum.doozan.com/
-
 ## FAQ
 
 **Q: Why aren't you using a github URL in the above instructions?**
@@ -139,20 +133,21 @@ c583afbc0e503b77db2eba3ad927b345  uboot.sh
 EOF
 ```
 
-## Changelog
+## Credits and changelog
 
-### 2015/10/22
+The uboot work was done by Bodhi and others at the [Doozan uboot forums](http://forum.doozan.com/list.php?3), and the script is based on [Qui Hong's 2014 Pogoplug tutorial](http://blog.qnology.com/2014/07/hacking-pogoplug-v4-series-4-and-mobile.html).
+
+### 2016-09
+
+* Updated to use [Bodhi's 2016.05 release](http://forum.doozan.com/read.php?3,12381)
+
+### 2015-10
 
 * Verified the script also works with the **Pogoplug Series 4** (model **POGO-V4-A3-01**).
-
-### 2015/10/8
-
 * Initial version of script.  Verified to work the **Pogoplug Mobile** (models **POGO-V4-A1-01** and **POGO-V4-A1-05**).
 
 
-## Related resources:
-
-You may also be interested in my other Pogoplug github projects:
+## Related github projects
 
 * [pogoplug-v4-bodhi-rootfs-debian](https://github.com/pepaslabs/pogoplug-v4-bodhi-rootfs-debian)
 * [pogoplug_static_binaries](https://github.com/pepaslabs/pogoplug_static_binaries)
