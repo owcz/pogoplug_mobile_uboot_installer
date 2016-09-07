@@ -139,12 +139,11 @@ The uboot work was done by Bodhi and others at the [Doozan uboot forums](http://
 
 ### 2016-09
 
-* Updated to use [Bodhi's 2016.05 release](http://forum.doozan.com/read.php?3,12381)
+* Updating (in progress) to use [Bodhi's 2016.05 release](http://forum.doozan.com/read.php?3,12381), [Debian w/ kernel 4.4.0](http://forum.doozan.com/read.php?2,12096)
 
 ### 2015-10
 
-* Verified the script also works with the **Pogoplug Series 4** (model **POGO-V4-A3-01**).
-* Initial version of script.  Verified to work the **Pogoplug Mobile** (models **POGO-V4-A1-01** and **POGO-V4-A1-05**).
+* Initial version of script,  verified to work with the **Pogoplug Mobile** (models **POGO-V4-A1-01** and **POGO-V4-A1-05**) and **Pogoplug Series 4** (model **POGO-V4-A3-01**).
 
 
 ## Related github projects
